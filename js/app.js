@@ -6,15 +6,23 @@ const app = Vue.createApp({
     };
   },
   methods: {
-    setName(event, lastName) {
-      this.name = event.target.value + ' ' + lastName;
-    },
     add(num) {
       this.counter = this.counter + num;
     },
     reduce(num) {
       this.counter = this.counter - num;
       // this.counter--;
+    },
+    reset() {
+      this.name = '';
+    }
+  },
+  computed: {
+    fullName() {
+      if (this.name === '') {
+        return '';
+      }
+      return `${this.name} Sayed`;
     }
   }
 });
