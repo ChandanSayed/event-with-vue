@@ -25,7 +25,7 @@ const app = Vue.createApp({
   },
   computed: {
     fullName() {
-      this.fullName = this.firstName + this.lastName;
+      return `${this.firstName}  ${this.lastName}`;
     }
   }
 });
