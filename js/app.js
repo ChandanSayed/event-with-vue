@@ -2,8 +2,14 @@ const app = Vue.createApp({
   data() {
     return {
       counter: 0,
-      name: ''
+      firstName: '',
+      lastName: ''
     };
+  },
+  watch: {
+    // name(value) {
+    //   this.fullName = `${value}`;
+    // }
   },
   methods: {
     add(num) {
@@ -19,10 +25,7 @@ const app = Vue.createApp({
   },
   computed: {
     fullName() {
-      if (this.name === '') {
-        return '';
-      }
-      return `${this.name} Sayed`;
+      this.fullName = this.firstName + this.lastName;
     }
   }
 });
